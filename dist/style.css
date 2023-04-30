@@ -1,38 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+
 body,
 html {
     height: 100%;
 }
 
+* {
+    font-family: "Poppins";
+    color: white;
+}
+
+body,
+header {
+    display: flex;
+}
+
+h1,
 body {
     margin: 0;
-    padding: 20px 3%;
+}
 
-    background-image: url("./images/w2.jpg");
+body {
+    background-image: url("./images/w3.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    flex-direction: column;
 }
 
 header {
-    display: flex;
-
     justify-content: flex-end;
-
+    padding: 20px 3%;
 }
 
 #search {
     font-size: 18px;
     width: 200px;
 
-    padding: 10px;
+    padding: 10px 30px;
     color: white;
 
-    background-color: rgba(100, 100, 100, 0.5);
+    background-color: rgba(100, 100, 100, 0.4);
     border: none;
     border-radius: 5px;
-
 }
 
 input::placeholder {
     color: rgb(185, 185, 185);
+}
+
+main {
+    flex: 1;
+}
+
+#weather {
+    
 }

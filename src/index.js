@@ -63,5 +63,5 @@ function getFeel(data) {
 
 function getTime(data) {
     const { localtime } = data.location;
-    return new Date(localtime).toString();
+    return localtime;
 }
