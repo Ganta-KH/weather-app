@@ -6,26 +6,24 @@ async function getData(location) {
 
     const data = await response.json();
 
-    const region = await getLocation(data);
+    const [ region, condition, temp, humidity, wind, feelslike, time] =
+        await Promise.all([
+            getLocation(data),
+            getCondition(data),
+            getTemperature(data),
+            getWind(data),
+            getHumidity(data),
+            getFeel(data),
+            getTime(data),
+        ]);
+
     console.log(region);
-
-    const condition = await getCondition(data);
     console.log(condition);
-
-    const temp = await getTemperature(data);
     console.log(temp);
-
-    const wind = await getWind(data);
     console.log(wind);
-
-    const humidity = await getHumidity(data);
     console.log(humidity);
-
-    const feelslike = await getFeel(data);
     console.log(feelslike);
-
-    const time = await getTime(data)
-    console.log(time)
+    console.log(time);
 }
 
 getData("jijel");
