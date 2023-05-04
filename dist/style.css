@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins);
+@import url(https://fonts.googleapis.com/css?family=Kanit);
 
 body,
 html {
@@ -6,7 +6,7 @@ html {
 }
 
 * {
-    font-family: "Poppins";
+    font-family: "Kanit", sans-serif;
     color: white;
 }
 
@@ -16,7 +16,8 @@ header {
 }
 
 h1,
-body {
+body,
+p {
     margin: 0;
 }
 
@@ -55,5 +56,38 @@ main {
 }
 
 #weather {
-    
+    margin: 25px 5vw;
+}
+
+#condition {
+    font-size: 3.5vmin;
+}
+
+#region {
+    font-size: 6.5vmin;
+}
+
+#temp {
+    font-size: 9vmin;
+}
+
+.nums {
+    display: grid;
+    grid-template-columns: max-content 5px 1fr;
+    gap: 2rem;
+}
+
+.line {
+    border-left: 5px solid white;
+    border-radius: 8px;
+}
+
+.temp {
+    display: flex;
+    flex-direction: column;
+} 
+
+.temp > * {
+    flex: 1;
+    font-size: 2.5vmin;
 }
