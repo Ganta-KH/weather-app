@@ -31,12 +31,12 @@ function showTemp(temp) {
 }
 
 function showFeelslike(feelslike) {
-    const feelslikeH1 = document.getElementById("feelslike");
+    const feelslikeH1 = document.getElementById("feel");
     feelslikeH1.textContent = `Feels like: ${feelslike}`;
 }
 
 function showHumidity(humidity) {
-    const humidityP = document.getElementById("humidity");
+    const humidityP = document.getElementById("humid");
     humidityP.textContent = `Humidity: ${humidity}`;
 }
 
