@@ -24,18 +24,17 @@ async function getData(location) {
 
     const data = await response.json();
 
-    const [condition, region, time, temp, feelslike, humidity, wind] =
-        await Promise.all([
-            getCondition(data),
-            getLocation(data),
-            getTime(data),
-            getTemperature(data),
-            getFeel(data),
-            getHumidity(data),
-            getWind(data),
-        ]);
+    const infos = await Promise.all([
+        getCondition(data),
+        getLocation(data),
+        getTime(data),
+        getTemperature(data),
+        getFeel(data),
+        getHumidity(data),
+        getWind(data),
+    ]);
 
-    showData([condition, region, time, temp, feelslike, humidity, wind]);
+    showData(infos);
 }
 
 function getLocation(data) {
