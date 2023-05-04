@@ -17,24 +17,28 @@ function init() {
 }
 
 async function getData(location) {
-    const response = await fetch(
-        `http://api.weatherapi.com/v1/current.json?key=857d379b247f42ce86f153950232504&q=${location}&aqi=no`,
-        { mode: "cors" }
-    );
+    try {
+        const response = await fetch(
+            `http://api.weatherapi.com/v1/current.json?key=857d379b247f42ce86f153950232504&q=${location}&aqi=no`,
+            { mode: "cors" }
+        );
 
-    const data = await response.json();
+        const data = await response.json();
 
-    const infos = await Promise.all([
-        getCondition(data),
-        getLocation(data),
-        getTime(data),
-        getTemperature(data),
-        getFeel(data),
-        getHumidity(data),
-        getWind(data),
-    ]);
+        const infos = await Promise.all([
+            getCondition(data),
+            getLocation(data),
+            getTime(data),
+            getTemperature(data),
+            getFeel(data),
+            getHumidity(data),
+            getWind(data),
+        ]);
 
-    showData(infos);
+        showData(infos);
+    } catch {
+        return;
+    }
 }
 
 function getLocation(data) {
